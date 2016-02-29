@@ -1,0 +1,23 @@
+---
+# defaults file for ansible-role-nsswitch
+
+config_file: /etc/nsswitch.conf
+ensure_ldap: absent
+ensure_vas: absent
+vas_nss_module_passwd: vas4
+vas_nss_module_group: vas4
+vas_nss_module_automount: nis
+vas_nss_module_netgroup: nis
+vas_nss_module_aliases: ""
+vas_nss_module_services: ""
+passwd: 'USE_DEFAULTS'
+sudoers: 'USE_DEFAULTS'
+shadow: 'USE_DEFAULTS'
+group: 'USE_DEFAULTS'
+hosts: 'USE_DEFAULTS'
+automount: 'USE_DEFAULTS'
+services: 'USE_DEFAULTS'
+bootparams: 'USE_DEFAULTS'
+aliases: 'USE_DEFAULTS'
+publickey: 'USE_DEFAULTS'
+netgroup: 'USE_DEFAULTS'

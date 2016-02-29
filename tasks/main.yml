@@ -1,0 +1,13 @@
+---
+# tasks file for ansible-role-nsswitch
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: configure /etc/nsswitch.conf file
+  template:
+    src: nsswitch.conf.j2
+    dest: "{{config_file}}"
+    owner: root
+    group: root
+    mode: 0644
+

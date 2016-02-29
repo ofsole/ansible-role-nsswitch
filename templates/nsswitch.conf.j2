@@ -1,0 +1,34 @@
+# This file is being maintained by Ansible.
+# DO NOT EDIT
+
+passwd:     {{passwd}}{{ " ldap" if ensure_ldap == 'present' else '' }}{{ " "+vas_nss_module_passwd if ensure_vas == 'present' else ''}}
+shadow:     {{shadow}}{{ " ldap" if ensure_ldap == 'present' else ''}}
+group:      {{group}}{{ " ldap" if ensure_ldap == 'present' else '' }}{{ " "+vas_nss_module_group if ensure_vas == 'present' else ''}}
+
+sudoers:    {{sudoers}}{{ " ldap" if ensure_ldap == 'present' else ''}}
+
+hosts:      {{hosts}}
+
+bootparams: {{bootparams}}
+ethers:     files
+netmasks:   files
+networks:   files
+protocols:  files{{ " ldap" if ensure_ldap == 'present' else ''}}
+rpc:        files
+services:   {{services}}{{ " ldap" if ensure_ldap == 'present' else ''}}{{ " "+vas_nss_module_services if ensure_vas == 'present' and vas_nss_module_services != "" else ''}}
+netgroup:   {{netgroup}}{{ " ldap" if ensure_ldap == 'present' else ''}}{{ " "+vas_nss_module_netgroup if ensure_vas == 'present' and vas_nss_module_netgroup != "" else ''}}
+publickey:  {{publickey}}
+automount:  {{automount}}{{ " ldap" if ensure_ldap == 'present' else ''}}{{ " "+vas_nss_module_automount if ensure_vas == 'present' and vas_nss_module_automount != "" else ''}}
+aliases:    {{aliases}}{{" "+vas_nss_module_aliases if ensure_vas == 'present' and vas_nss_module_aliases != "" else ''}}
+{% if nsswitch_ipnodes != "" %}
+ipnodes:    {{nsswitch_ipnodes}}
+{% endif %}
+{% if nsswitch_printers != "" %}
+printers:   {{nsswitch_printers}}
+{% endif %}
+{% if nsswitch_auth_attr != "" %}
+auth_attr:  {{nsswitch_auth_attr}}
+{% endif %}
+{% if nsswitch_prof_attr != "" %}
+prof_attr:  {{nsswitch_prof_attr}}
+{% endif %}

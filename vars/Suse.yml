@@ -1,0 +1,16 @@
+---
+passwd: files
+sudoers: files
+shadow: files
+group: files
+hosts: "files dns"
+automount: files
+services: files
+bootparams: files
+aliases: files
+publickey: files
+netgroup: files
+nsswitch_ipnodes: ""
+nsswitch_printers: ""
+nsswitch_auth_attr: ""
+nsswitch_prof_attr: ""
