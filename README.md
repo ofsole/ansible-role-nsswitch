@@ -1,5 +1,7 @@
-Role Name
+ansible-role-nsswitch
 =========
+
+[![Build Status](https://travis-ci.org/ofsole/ansible-role-nsswitch.png?branch=master)](https://travis-ci.org/ofsole/ansible-role-nsswitch)
 
 This Module used to manage nsswitch on VAS and LDAP integration.
 
